@@ -1,0 +1,6 @@
+Browser does not understands reacts, but it understands js as Browser has js engine in it already.
+
+how to get react into our Browser?
+1. using cdn links, where the react is hosted
+
+npm helps to manage packages in js, various libraries and installed in js using npm command but does not stands for node package manager
