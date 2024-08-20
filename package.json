@@ -1,0 +1,24 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "This is Namaste React",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amishakul/Namaste-React.git"
+  },
+  "keywords": [
+    "react",
+    "namaste",
+    "react"
+  ],
+  "author": "Amisha Kulkarni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amishakul/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/Amishakul/Namaste-React#readme"
+}
