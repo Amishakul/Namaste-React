@@ -2,5 +2,49 @@ Browser does not understands reacts, but it understands js as Browser has js eng
 
 how to get react into our Browser?
 1. using cdn links, where the react is hosted
+2. using npm command
 
-npm helps to manage packages in js, various libraries and installed in js using npm command but does not stands for node package manager
+npm helps to manage packages in js, various libraries and packages are installed in js using npm. npm command but does not stands for node package manager. npm contains all the packages
+
+package.json is an configuration for npm. package.json keeps track on what are the versions of all the packages/dependencies present/installed in our app.
+packages are also known as dependencies
+
+bundler helps to bundle the files and pack it together the files present in your app. parcel, vite, webpack these are all bundler which are used to bind all the files present in the app for to create production ready app/website.
+
+There are 2 types of dependencies/packages we can install
+1. dev dependencies -> used in development of app phase
+2. normal dependencies -> used in production of app phase
+
+caret (^) -> will automatically upgrade the minor version of the packages in the app 
+tilde (~) ->  will automatically upgrade the major version of the packages in the app
+
+package-lock-json keeps track of all exact versions of all the dependencies
+
+sha512 -> helps to keep whatever is present on my machine and whatever is present in the production level same
+
+node modules contains data/code of all the installed packages taken from npm (collection of dependencies)
+
+Transitive dependencies: a package/dependency having another package/dependency as its dependency and so on. So node modules have many other packages also other than parcel package, which means parcel has further other packages on which parcel is dependent on.
+
+all the other libraries/packages have its own package.json file in the app because of Transitive dependencies case
+
+package.json: ^7.89.5
+package.lock.json: 7.89.5 (i.e. the exact version of the package excluding its minor and mojor versions)
+
+if we have package.json and package.lock.json files we can recreate all node modules (use command "npm install")
+
+
+"npx parcel index.html" hosted the app on a local server with a port 1234. this activity is done using parcel (development web app)
+
+for installing a package we write npm command and for executing a package we write npx and the package name (i.e. npx parcel)
+
+parcel helps to automatically refresh the browser page when user save changes in the code instead of manually refreshing.
+
+for building the production web app write "npx parcel build index.html (i.e. file name)"
+
+dist folder is running the web app on 1234 server and parcel cache updates the changes made into the code file
+
+
+
+
+
