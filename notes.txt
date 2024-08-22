@@ -47,4 +47,14 @@ dist folder is running the web app on 1234 server and parcel cache updates the c
 
 
 
+npx parcel index5.html means -> executing "npm package parcel" by giving source as index5.html
+
+Now to run the project do "npm run start" or "npm start" for development mode and "npm run build" for production mode
+
+
+
+
+
+Tips:💡
+1. If you do not know how to run a web application just go to package.json file and search for script tag you will get the command to run the project
 

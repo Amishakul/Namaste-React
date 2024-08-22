@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "This is Namaste React",
   "scripts": {
+    "start": "parcel index6.html",
+    "build": "parcel build index6.html",
     "test": "jest"
   },
   "repository": {
