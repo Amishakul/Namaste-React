@@ -58,3 +58,29 @@ Now to run the project do "npm run start" or "npm start" for development mode an
 Tips:💡
 1. If you do not know how to run a web application just go to package.json file and search for script tag you will get the command to run the project
 
+JSX prevents cross-side scripting attacks for you. i.e. if an malicious api is present and you want to run it as js snippet inside jsx, jsx will not allow it. JSX does not blindly run the js snippet inside it, it sanitizes the js snippet and runs it.
+
+we can also render a react functional component in this way: <Title></Title> inside another react functional component. And we can write <Title /> any number of times.
+
+We can call a react functional component like a Js snippet inside jsx.
+
+const Title = () => (
+    <h1 className = "Read" tabIndex ="5">
+    Namaste react using jsx 🚀
+    </h1>
+)
+
+const HeadingComponent = () => (
+    <div id="container">
+    {Title()}
+    <h1 className="heading">Namaste React Functional Component</h1>
+    </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root));
+
+root.render(<HeadingComponent />);
+
+
+
+👍 Code is readable because of JSX not because of react
