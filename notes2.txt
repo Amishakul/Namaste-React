@@ -1,0 +1,1 @@
+Functional component is made to reuse that function again and again in the code
