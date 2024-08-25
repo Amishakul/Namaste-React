@@ -1,1 +1,31 @@
 Functional component is made to reuse that function again and again in the code
+
+Prop: Properties, we can use prop to pass the data dynamically to the component. Props are just normal arrguments to a function.
+For eg. <RestaurantCard /> functional component is a prop now.
+
+Prop is an js object. React will wrap up everything as an object and pass it as a prop.
+
+💡-> So whenever we need to pass a dynamic data to a component we pass it as a prop
+
+Another way of passing the prop: Destructing of objects
+
+const RestaurantCard = ({resName, cuisine}) => {
+    return (
+        <h3>{resName}</h3>
+        <h4>{cuisine}</h4>
+    )
+}
+
+so here, const {resName, cuisine} = props;
+
+Data comes from backend in the form of json
+
+Config driven UI: Changing the carousal UI on the basis of backend data 
+
+Cloudinary images are CDN
+
+Because of RestaurantCard reusable component we were able to pass dynamic props inside this component (reusable card)
+
+Do not use index as a key in react instead use id
+
+not using keys (not acceptable) <<<< index as a key <<<<<< unique id as key(best pratice)
