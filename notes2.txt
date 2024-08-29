@@ -29,3 +29,39 @@ Because of RestaurantCard reusable component we were able to pass dynamic props 
 Do not use index as a key in react instead use id
 
 not using keys (not acceptable) <<<< index as a key <<<<<< unique id as key(best pratice)
+
+
+In JavaScript, the ?. operator is known as the optional chaining operator. It allows you to safely access deeply nested properties of an object without having to explicitly check if each level of the object exists.
+
+resData?.data: The ?. operator checks if resData is not null or undefined before attempting to access the data property. If resData is null or undefined, it short-circuits and returns undefined, preventing any error that would occur if you tried to access a property on null or undefined.
+
+Destructuring Assignment: After resData?.data safely returns the data property (or undefined if resData is null or undefined), the destructuring assignment {cloudinaryImageId, name, cuisines, avgRating, costForTwo, deliveryTime} extracts these properties from the data object if it exists.
+
+The ?. operator, known as optional chaining, allows you to safely access properties of an object that might be null or undefined without causing an error. If the object is null or undefined, it returns undefined instead of throwing an error.
+
+Important🔴:
+
+1. we have created RestaurantCard functional component to reuse the card again and again.
+2. We have used prop to dynamically add data to card i.e. not every card will contain same information, so add different information to each card prop is used
+3. Then we have used map function to do Config driven UI. i.e. after some days or months we may have new Restaurants added to our api, or some Restaurants might get removed, so if we manaually write the prop or hardcode the each prop it might create an error like if Restaurant[0] is not present in future or another new Restaurant gets into the list in 1st position or in any position, so to change our app ui as per as changes made in api we have used map function which will make our app as config driven UI.
+
+
+
+
+Meaning of this line: {resList.map((restaurant) => (
+                <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+            ))
+            }
+
+
+resList.map((restaurant) => ... ): This is using the map function to iterate over an array called resList. For each element in this array, the current element is represented by the variable restaurant.
+
+restaurant: This variable represents the current item from resList during each iteration of the map function.
+
+<RestaurantCard key={restaurant.data.id} resData={restaurant} />: For each restaurant, a RestaurantCard component is being created. The key prop is used to give each RestaurantCard a unique identifier. In this case, restaurant.data.id is used as the unique key.
+
+resData={restaurant}: This is passing the entire restaurant object as a prop named resData to the RestaurantCard component. Within the RestaurantCard component, resData will refer to the current restaurant object.
+
+So in summary, restaurant is the current item from resList in each iteration, and resData is the prop name used to pass that restaurant object to the RestaurantCard component.
+
+Note: Here, key={restaurant.data.id} resData={restaurant} -> props
