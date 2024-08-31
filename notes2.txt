@@ -65,3 +65,17 @@ resData={restaurant}: This is passing the entire restaurant object as a prop nam
 So in summary, restaurant is the current item from resList in each iteration, and resData is the prop name used to pass that restaurant object to the RestaurantCard component.
 
 Note: Here, key={restaurant.data.id} resData={restaurant} -> props
+
+Make a separate file for each component
+
+Always export the file first and then import the file (first give and then take)
+
+Do not keep hardcoded code into your files
+
+By default a file can only export 1 thing not more than 1 --> default export
+
+There are 2 types of export: default export and named export
+
+Making website dynamic means also adding buttons for filtering, etc. Instead of static i.e. read only.
+
+onMousehover is a js event you can use instead of onclick

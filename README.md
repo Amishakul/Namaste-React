@@ -22,3 +22,23 @@
 # how parcel is fast? because it has parcel-cache folder
 
 
+# Namaste Food
+
+// Components present in food App:
+// 1. Header: Logo, Nav Items
+// 2. Body: Search, RestaurantContainer which has Restaurant Card which further has -> Img, Name of Res, Star rating, cuisine, delivery time
+// 3. Footer: Copyright, Links, Address, Contact
+
+# Default Export/Import:
+
+export default Component;
+import Component from "path";
+
+# Named Export/Import:
+
+export const Component;
+import {Component} from "path";
+
+# Why react is fast?
+It can do faster dom manupalation --> Means if my data is getting changed then my UI should also get updated
+
