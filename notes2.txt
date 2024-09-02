@@ -79,3 +79,42 @@ There are 2 types of export: default export and named export
 Making website dynamic means also adding buttons for filtering, etc. Instead of static i.e. read only.
 
 onMousehover is a js event you can use instead of onclick
+
+Hook is a normal js function which is given to us by react and it contains superpowers i.e. state variable
+
+A Local state variable funtionality is available inside the component.
+
+const [listofRestaurants] = useState([]) -> listofRestaurants variable will have default value as empty array 
+
+const [listofRestaurants] = useState(null) -> ListofRestaurants variable will have default value as null
+
+A state variable is created using a hook which gives you array and not using normal JS variable like const hero = "hello"; or const hero = [];
+
+🔴: Normal JS Variable is defined like this: 
+let list = [];
+And updated like this: list = ["abc]; 
+
+const list = [];
+and updated like this: list.push("hello")
+
+In the website all the cards are shown at starting because of listofRestaurants contains default values of all the restaurants and if we want to modify these default values we will use another different variable name as 2nd parameter(setListOfRestaurant) in the state function which will modify the restaurants as per as filters. Instead of using normal JS technique to modify or update.
+
+whenever a state variable updates, react re-renders the component.
+
+React Virtual DOM is an normal JS object just as react element is.
+
+Virtual DOM is representation of actual DOM
+
+Diff Algo finds the difference between the updated virtual DOM and previous virtual DOM
+
+When something changes in the UI it is known as reconciliation
+
+Virtual DOM is the object representation of actual DOM
+
+So whenever a button is clicked a new object is formed and react finds the difference between the updated virtual dom and the previous virtual dom.
+
+And after finding the difference between these vitual dom's then react actually updates the actual DOM (i.e. HTML)
+
+whenever there is change in the state variable react will find out the difference between the virtual dom's and then it will re-render the component, it will update the actual dom.
+
+
