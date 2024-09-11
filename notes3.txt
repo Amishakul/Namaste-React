@@ -12,7 +12,11 @@ UseState is used to create state variables.
 
 Shimmer UI helps you to show fake cards or fake UI design until the web app retrives actual data from the API.
 
-CORS: CORS stands for Cross-Origin Resource Sharing. It tells your browser whether it can load data from a different domain or not (different from top domain). For example, if your top domain is domain-a.com, and you have a resource within the page from domain-b.com, the CORS policy will tell your browser whether resources from domain-b.com should be loaded or not. In general, many websites have strict CORS policies that tell browsers to block loading their resources in different domains. But, in some situations, for example in web development or app testing, you may need to test something in cross domains. Therefore, the CORS policy needs to be enabled temporarily.
+CORS: CORS stands for Cross-Origin Resource Sharing. If you are making an api call from one origin to different origin i.e. from one domain name to another domain name. eg. api call from zomato to swiggy. or you are making an api call from swiggy to localhost or vice versa, so the browser does not allow this api call. So to bypass this issue, cors is used.
+
+So by using cors, we are not directly making api call to swiggy, we are making direct call to cors and cors is giving us the api data from swiggy.
+
+
 
 UseState is used to render(refresh) the page so that your component changes/ updates dynamically. Which can not be done using normal JS variables. Hence State variables(local variables) are used which is given to us by UseState.
 
@@ -23,5 +27,11 @@ btnNameReact is a local variable and setBtnNameReact is acting as a function, so
 The whole header component will re-render not only just that login button. Header component is getting render but only the button changes.
 
 Rendering means again calling out or triggering the component(refreshing)
+
+whenever you change the local state variable, react re-renders the entire component
+
+whenever state variable updates, react triggers a reconciliation cycle(re-renders the component)
+
+When you type something in the search box, the whole body component is been re-render, but only the changes are made in the search input box
 
 

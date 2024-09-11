@@ -40,9 +40,9 @@
 
 }
 
-.Search{
+/* .Search{
     padding: 10px;
-}
+} */
 
 .res-logo{
     width: 100%;
@@ -71,6 +71,20 @@
     cursor: pointer;
 }
 
+
 .filter {
     display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: flex-start; /* Align items to the start */
+    gap: 10px; /* Add space between the elements */
+    margin-bottom: 20px; /* Optional: add space below the filter section */
+}
+
+.search {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+.search-box {
+    margin-right: 10px; /* Space between the search input and button */
 }
