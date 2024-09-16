@@ -100,6 +100,7 @@ const Body = () => {
             <div className="search">
                 <input type="text" className="search-box" value={searchText} onChange={(e) => {
                     setSearchText(e.target.value); // to update the value on the search bar as user types and to update that value to searchText via setSearchText using onchange event.
+                    // WE ARE USING SEARCHTEXT USESTATE SO AS WHEN THE USER TYPES A KEYWORD IN THE SEARCH BOX AND PRESS SEARCH BUTTON, THE UI WILL GET UPDATE
                 }} />
                 <button onClick={() => {
                     // Filter the restaurant cards and update the UI
