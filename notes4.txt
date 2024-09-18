@@ -8,3 +8,24 @@ If no Dependency array => UseEffect is called on every component render
 If Dependency array is empty = [] => UseEffect is called on intial render(just once)
 
 If the list will be fetched from an API, filtered, or modified in any way, useState is the way to go. so hence "listofRestaurants" is using useState() not normal js variable. i.e. updating UI wrt to change in data
+
+if Dependency array is [btnNameReact] => called everytime when btnNameReact is updated.
+
+Never called hooks outside of the functional components.
+
+useState is used to create localState variables inside your functional components.
+
+React Router:
+
+
+import { createBrowserRouter } from "react-router-dom"; -> it will create a routing configuration for us.
+
+configuration: Means Some information that will define what will happen on a specific route. An information that will tell the browser router that what will happen on a specific path. 
+
+Router Provider component will provide routing configuration to the app.
+
+import { useRouteError } from "react-router-dom"; => We can get more information about the customize error
+
+Start from 1:34:17
+
+
