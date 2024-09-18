@@ -1,0 +1,10 @@
+UseEffect is called when everytime the component renders.
+Dependency array changes the behaviour of it's render. [] -> Dependency array in UseEffect
+
+The first arrgument to UseEffect is callback function and 2nd arrgument is Dependency array
+
+If no Dependency array => UseEffect is called on every component render
+
+If Dependency array is empty = [] => UseEffect is called on intial render(just once)
+
+If the list will be fetched from an API, filtered, or modified in any way, useState is the way to go. so hence "listofRestaurants" is using useState() not normal js variable. i.e. updating UI wrt to change in data
