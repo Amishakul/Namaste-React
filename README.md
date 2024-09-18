@@ -3,7 +3,7 @@
 2. Local Server
 3. HMR = Hot Module Replacement
 4. File Watching Algorithm - written in C++
-5. Caching - Faster Builds (3rd, 2nd, 5th points helps to automatically refresh the browser page when user save changes in the code instead of manually refreshing, which is done by parcel.)
+5. Caching - Faster Builds (3rd, 4th, 5th points helps to automatically refresh the browser page when user save changes in the code instead of manually refreshing, which is done by parcel.)
 6. Image Optimization (loads the images of your webiste on browser)
 7. Minification of files in production level
 8. Bundling the files 
@@ -24,10 +24,10 @@
 
 # Namaste Food
 
-// Components present in food App:
-// 1. Header: Logo, Nav Items
-// 2. Body: Search, RestaurantContainer which has Restaurant Card which further has -> Img, Name of Res, Star rating, cuisine, delivery time
-// 3. Footer: Copyright, Links, Address, Contact
+ Components present in food App:
+ 1. Header: Logo, Nav Items
+ 2. Body: Search, RestaurantContainer which has Restaurant Card which further has -Img, Name of Res, Star rating, cuisine, delivery time
+ 3. Footer: Copyright, Links, Address, Contact
 
 # Default Export/Import:
 
