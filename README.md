@@ -67,4 +67,11 @@ const [listofRestaurants. setListOfRestaurants] = arr;
 const listOfRestaurants = arr[0];
 const setListOfRestaurants = arr[1];
 
+# 2 types of Routing in web apps
+- Client Side Routing
+- Server Side Routing - we are doing this, we are not making any network call
+
+# Single page application is just one page just the components are getting interchange
+
+
 

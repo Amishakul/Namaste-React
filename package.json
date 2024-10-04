@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Amishakul/Namaste-React#readme",
   "devDependencies": {
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
     "parcel": "^2.12.0",
     "process": "^0.11.10"
   },

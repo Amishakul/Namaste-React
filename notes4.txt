@@ -26,6 +26,21 @@ Router Provider component will provide routing configuration to the app.
 
 import { useRouteError } from "react-router-dom"; => We can get more information about the customize error
 
-Start from 1:34:17
+{btnNameReact} is used to ensure the button's label updates dynamically based on the state. In the Header component.
 
+Childern Routes:
+
+The outlet will be filled with childern according to the path on what page we are. For eg. if whenever i will be on "/" my body page will be filled on this outlet. if i'm on /about my about will be filled inside this outlet.
+
+The outlet gets replaced by components like about, contact component/page.
+The outlet does not even get visible on browsers html as it gets replaced by the component.
+
+outlet is a component
+
+A superpower given to us by react router dom, link component -> which is used to link different pages on our website -> without refreshing the page and routes/links to particular page, it just reloads/refreshes the component not whole page.
+
+Never ever used an anchor tag to link pages in react, as it refreshes the whole page which makes our website slower.
+
+
+React is single page application means if we want to route to another page for e.g. about us page or contact us page, our whole website page does not gets refresh just the component i.e. about us, contact us component gets refresh. So in this case header and other elements remains intact/fix, just the components reload not the whole page.
 
