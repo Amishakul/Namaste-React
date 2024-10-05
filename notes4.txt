@@ -44,3 +44,14 @@ Never ever used an anchor tag to link pages in react, as it refreshes the whole 
 
 React is single page application means if we want to route to another page for e.g. about us page or contact us page, our whole website page does not gets refresh just the component i.e. about us, contact us component gets refresh. So in this case header and other elements remains intact/fix, just the components reload not the whole page.
 
+Behide the scenes Link component provided by react router dom uses the anchor tag. Link is not provided by html or js, so browser does not understands Link at all, so on browser anchor tag is been displayed in elements section code. 
+
+Link is an wrapper over anchor tag. 
+
+Behide the scenes react router dom is making Link as anchor tag and also keeping the track of it.
+
+If we put any value/variable inside Dependency array of UseEffect, so whenever that variable value changes/data changes, useeffect will get called respectively.
+
+Do not make nested hooks, it will not work
+
+
