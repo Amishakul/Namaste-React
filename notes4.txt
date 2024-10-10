@@ -55,3 +55,37 @@ If we put any value/variable inside Dependency array of UseEffect, so whenever t
 Do not make nested hooks, it will not work
 
 
+In React, a prop (short for "property") is a way to pass data from a parent component to a child component. Props help to make components reusable and dynamic.
+
+Eg of props -> 
+
+import React from 'react';
+
+// Parent Component
+function App() {
+  const userName = "John Doe";
+  const userAge = 25;
+
+  return (
+    <div>
+      <h1>User Information</h1>
+      <UserProfile name={userName} age={userAge} />
+    </div>
+  );
+}
+
+// Child Component
+function UserProfile(props) {
+  return (
+    <div>
+      <h2>Name: {props.name}</h2>
+      <p>Age: {props.age}</p>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+

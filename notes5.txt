@@ -1,0 +1,18 @@
+A functional component is a function which returns a piece of JSX.
+
+A Class based component is a class which extends react.component and it has a render method which returns some piece of JSX, this JSX will be converted to html and will be displayed on the web page.
+
+React.component is given to us by react.
+
+React.component is a class inside react library
+
+Loading a class based component on a web page means creating instance of a class.
+
+when you create instance of a class, constructor is called.
+
+so constructor is the best place to pass props and to create state variables in class based component.
+
+In functional component behind the scenes the state variables are stored inside big state object.
+
+
+

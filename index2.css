@@ -62,7 +62,7 @@
     margin: 5px;
     padding: 5px;
     width: 200px;
-    height: 300px; 
+    height: 400px; 
     background-color: #f0f0f0;
 }
 
@@ -87,4 +87,12 @@
 
 .search-box {
     margin-right: 10px; /* Space between the search input and button */
+}
+
+.user-card {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+
+
 }
