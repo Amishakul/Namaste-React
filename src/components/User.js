@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 // const User = (props) => {
@@ -11,8 +11,14 @@ import { useState } from "react";
 
 // Destructuring of props: "Amisha Kulkarni (Function) is an arrgument passed to the function User as a props." name is parameter.
 const User = ({name}) => {
-    const [count] = useState(0);
+    const [count, setCount] = useState(0);
     const[count2] = useState(1);
+
+    useEffect(() => {
+        // API Calls
+    }, []);
+
+
     return <div className="user-card">
     {/* How to set state variable inside jsx */}
         <h2>Count = {count}</h2> 

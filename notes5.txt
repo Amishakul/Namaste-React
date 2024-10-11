@@ -1,3 +1,5 @@
+Class Based Component 🥈
+
 A functional component is a function which returns a piece of JSX.
 
 A Class based component is a class which extends react.component and it has a render method which returns some piece of JSX, this JSX will be converted to html and will be displayed on the web page.
@@ -12,7 +14,41 @@ when you create instance of a class, constructor is called.
 
 so constructor is the best place to pass props and to create state variables in class based component.
 
-In functional component behind the scenes the state variables are stored inside big state object.
+In functional component behind the scenes the state variables are stored inside big state object, react does this behind the scenes.
+
+Loading the component = mounting the component on to the web page.
+
+When a class is created/made/instantiated a constructor is called,
+so first constructor is called and then render method is called
+
+ComponentDidMount is used to make API calls in class based component
+
+
+
+Life Cycle of class-based component 🥈
+
+- Parent constructor
+- Parent render
+- FirstChild constructor
+- FirstChild render
+- SecondChild constructor
+- SecondChild render
+
+Reconcliation Algorithm
+
+DOM UPDATED - IN A SINGLE BATCH
+- FirstChild Component Did mount
+- SecondChild Component Did mount
+- Parent Component Did mount
+
+
+Steps🔴:
+
+1. constructor is called
+2. Render method is called
+3. Then React will update the dom / Load the dom
+4. Then ComponentDidMount is called
+
 
 
 
