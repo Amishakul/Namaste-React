@@ -5,21 +5,23 @@ import { MENU_API } from "../Utils/constants";
 
 const RestaurantMenu = () => {
 
-    const [resInfo, setResInfo] = useState(null);
+    //const [resInfo, setResInfo] = useState(null);
 
-    const{ resId } = useParams();
+    const{ resId } = useParams(); // gives the exact restaurant ID from the api in the variable resID
     console.log(resId)
 
-    useEffect(() => {
-        fetchMenu();
-    }, []);
+    const resInfo = useRestaurantMenu(resId); // custom hook
 
-    const fetchMenu = async () => {
-        const data = await fetch(MENU_API +resId);
-        const json = await data.json();
-        console.log(json)
-        setResInfo(json.data)
-    };
+    // useEffect(() => {
+    //     fetchMenu();
+    // }, []);
+
+    // const fetchMenu = async () => {
+    //     const data = await fetch(MENU_API +resId);
+    //     const json = await data.json();
+    //     console.log(json)
+    //     setResInfo(json.data)
+    // };
 
     if (resInfo === null) return <Shimmer/>
 

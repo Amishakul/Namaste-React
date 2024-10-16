@@ -86,4 +86,8 @@ React is just a single page application, we just change the components. or even 
 
 
 
+Single Responsiblity Principle: Each component present should have only a single Responsiblity. For eg. The task of restaurant card component should only be to display restaurant cards on the web page. The task of restaurant menu component should only be to display menu for each restaurant.
+
+Modularity: Breaking down the code in different small-small modules so that the code becomes more maintainable and testable. By doing this you get features of Reusablity, maintainable, testable.
+
 
