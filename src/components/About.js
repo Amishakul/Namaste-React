@@ -7,25 +7,28 @@ class About extends Component {
     constructor(props) {
         super(props);
 
-        console.log("Parent Constructor")
+        //console.log("Parent Constructor")
     }
 
     componentDidMount() {
-        console.log("Parent Component Did Mount")
+        //console.log("Parent Component Did Mount")
     }
 
     render() {
 
-        console.log("Parent Render")
+        //console.log("Parent Render")
         return (
             <div>
             <h1>About Class Component</h1>
             <h2>This is a Food App</h2>
             {/* <User name={"Amisha Kulkarni (function)"}/> */}
 
-            <UserClass name={"First"} location={"Mumbai Class"}/>
-            <UserClass name={"Second"} location={"USA"}/>
-            <UserClass name={"Third"} location={"USA"}/>
+            {/* <UserClass name={"First"} location={"Mumbai Class"}/> */}
+            <User/>
+
+
+            {/* <UserClass name={"Second"} location={"USA"}/>
+            <UserClass name={"Third"} location={"USA"}/> */}
         </div>
 
         );

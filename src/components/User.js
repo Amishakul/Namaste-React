@@ -16,7 +16,20 @@ const User = ({name}) => {
 
     useEffect(() => {
         // API Calls
+
+        const timer = setInterval(() => {
+            console.log("Amisha Kulkarni")
+        }, 1000);
+        console.log("useeffect")
+
+        // This is basically Unmount Phase
+        return() =>{
+            clearInterval(timer);
+            console.log("useffect return")
+        }
     }, []);
+
+    console.log("Render");
 
 
     return <div className="user-card">

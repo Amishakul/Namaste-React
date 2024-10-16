@@ -50,5 +50,40 @@ Steps🔴:
 4. Then ComponentDidMount is called
 
 
+WORKING:
+
+- As soon as a class is created a constructor is called.
+- Then render is called, but the component i.e. card, is been render with dummy data at initial phase. The state variable is been filled with default dummy data.
+- Now ComponentDidMount was called
+- When ComponentDidMount was called, an api call was made
+- And then our setState variable is been called and updated cycle begins
+- We are not waiting for so long to wait for api data to get feteched, we will initially fetch dummy data.
+- When the setState is called in ComponentDidMount phase, updating of data starts
+- setState updates the state variable, state variable gets updated with the api data
+- When render is called again, 2nd time, Now the state variable is updated with the api data(updating of data happens in ComponentDidMount phase itself).
+- So in update cycle, react will update the DOM, React will calculate the div tag and update the DOM with the new value now(Reconcliation Algorithm)
+- React will update the DOM with new data(data of api)
+- And at last componentDidUpdate is called
+
+
+---- Mounting Cycle -----
+1. constructor (dummy data)
+2. Render (dummy data)
+3. <HTML Dummy data>
+4. ComponentDidMount is called -> <API call>
+5. <this.setState> --> set variable is updated
+
+
+---- Update Cycle -----
+6. Render(API data)
+7. <HTML (new API data)>
+8. componentDidUpdate
+
+Mounting -> showing data on to the UI.
+Unmounting -> Removing the data from the UI
+
+React is just a single page application, we just change the components. or even if we change pages/components it is happening in a single page
+
+
 
 
