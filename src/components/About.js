@@ -24,7 +24,7 @@ class About extends Component {
             {/* <User name={"Amisha Kulkarni (function)"}/> */}
 
             {/* <UserClass name={"First"} location={"Mumbai Class"}/> */}
-            <User/>
+            <UserClass/>
 
 
             {/* <UserClass name={"Second"} location={"USA"}/>

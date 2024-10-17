@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 // import resList from "../Utils/MockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../Utils/useOnlineStatus";
 
 const Body = () => {
 
@@ -84,6 +85,14 @@ const Body = () => {
         setFilteredRestaurant(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
      };
+
+     const onlineStatus = useOnlineStatus();
+
+     if (onlineStatus === false) 
+        return (
+        <h1>Looks like you're offline!! Please check your internet connection;
+        </h1>
+     )
 
     // Conditional Rendering: Rendering on the basis of condition
     // if(listofRestaurants.length === 0) {

@@ -90,4 +90,6 @@ Single Responsiblity Principle: Each component present should have only a single
 
 Modularity: Breaking down the code in different small-small modules so that the code becomes more maintainable and testable. By doing this you get features of Reusablity, maintainable, testable.
 
+useParams is a tool in React Router that helps you get values from the URL.
 
+Use lazy loading to break your code into different small chunks.
