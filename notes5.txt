@@ -93,3 +93,19 @@ Modularity: Breaking down the code in different small-small modules so that the 
 useParams is a tool in React Router that helps you get values from the URL.
 
 Use lazy loading to break your code into different small chunks.
+
+1. scss, sass(another way of writing css) -> gives your normal css superpower, it makes writing css in more advanced way and easy way.
+2. styled components (another way of writing css)
+3. material UI
+4. Chakra UI
+5. Ant design
+6. Bootstrap
+7. Tailwind css -> css framework
+
+postcss -> transforming css inside javascript
+
+parcel(bundler) will use postcssrc to understand tailwind.
+
+px -> padding in horizontal; py -> padding in vertical
+
+Tailwind css is very light weight

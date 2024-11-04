@@ -105,13 +105,13 @@ const Body = () => {
     // conditon rendering using ternary operator
     return listofRestaurants.length === 0 ? <Shimmer/> : (
         <div className="body">
-            <div className="filter">
-            <div className="search">
-                <input type="text" className="search-box" value={searchText} onChange={(e) => {
+            <div className="filter flex">
+            <div className="search m-4 p-4">
+                <input type="text" className="border border-solid border-black" value={searchText} onChange={(e) => {
                     setSearchText(e.target.value); // to update the value on the search bar as user types and to update that value to searchText via setSearchText using onchange event.
                     // WE ARE USING SEARCHTEXT USESTATE SO AS WHEN THE USER TYPES A KEYWORD IN THE SEARCH BOX AND PRESS SEARCH BUTTON, THE UI WILL GET UPDATE
                 }} />
-                <button onClick={() => {
+                <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={() => {
                     // Filter the restaurant cards and update the UI
                     // we will get the data from SearchText
                     console.log(searchText);
@@ -122,16 +122,18 @@ const Body = () => {
                     setFilteredRestaurant(filteredRestaurant);
                 }}>Search</button>
             </div>
-            <button className="filter-btn" onClick={() => {
+            <div className="search m-4 p-4 flex items-center">
+            <button className="filter-btn px-4 py-2 bg-gray-100 rounded-lg" onClick={() => {
                 // Filter logic here
                 const filteredList = listofRestaurants.filter((res) => res.info.avgRating > 4.5);
                 setFilteredRestaurant(filteredList);
             }}>
             Top Rated Restaurants
             </button>
+            </div>
 
             </div>
-            <div className="res-container">
+            <div className="res-container flex flex-wrap">
             {/* <RestaurantCard  resName="Meghana Foods" cuisine="Biryani, North Indian, Asian"/>
             <RestaurantCard resName="KFC" cuisine="Burger, Fast Food" /> */}
             {filteredRestaurant.map((restaurant) => (
