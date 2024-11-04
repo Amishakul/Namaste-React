@@ -7,7 +7,7 @@ const Header = () => {
     const [btnNameReact, setBtnNameReact] = useState("Login");
     console.log("Header render")
 
-    const onlineStatus = useOnlineStatus();
+    const onlineStatus = useOnlineStatus(); // custom hook
 
     useEffect(() => {
         console.log("useEffect called")
