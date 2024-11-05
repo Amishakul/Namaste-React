@@ -63,7 +63,7 @@ class UserClass extends React.Component {
         //console.log(this.props.name + "Child Render")
 
         return (
-        <div className="user-card">
+        <div className="user-card py-4">
         {/* <h2>Count = {count}</h2>
         <button onClick={() => {
 
@@ -77,8 +77,8 @@ class UserClass extends React.Component {
 
         {/* <h2>Count2 = {count2}</h2> */}
 
-        <img src={avatar_url}/>
-        <h2>Name: {name}</h2>
+        <img className="mx-auto w-32 h-32 rounded-full" src={avatar_url}/>
+        <h2 className="py-4">Name: {name}</h2>
         <h2>Location: {location}</h2>
         <h2>Contact: amishakulkarni.com@gmail.com</h2>
     </div>

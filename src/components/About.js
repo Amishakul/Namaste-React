@@ -18,7 +18,7 @@ class About extends Component {
 
         //console.log("Parent Render")
         return (
-            <div>
+            <div className="p-4 m-4 text-center">
             <h1>About Class Component</h1>
             <h2>This is a Food App</h2>
             {/* <User name={"Amisha Kulkarni (function)"}/> */}

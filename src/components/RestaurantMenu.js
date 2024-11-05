@@ -30,10 +30,10 @@ const RestaurantMenu = () => {
     console.log(itemCards)
 
     return (
-        <div className="menu">
-            <h1>{name}</h1>
-            <p>{cuisines.join(", ")} - {costForTwoMessage}</p>
-            <h2>Menu</h2>
+        <div className="menu m-4 p-10 text-center">
+            <h1 className="font-bold">{name}</h1>
+            <p className="py-4">{cuisines.join(", ")} - {costForTwoMessage}</p>
+            <h2 className="font-bold">Menu</h2>
             <ul>
                 {itemCards.map((item) => (
                     <li key={item.card.info.id}>{item.card.info.name} {" Rs "} - {item.card.info.price/100 ||item.card.info.defaultPrice/100}</li>
