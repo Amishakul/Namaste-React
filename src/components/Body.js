@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import { useState, useEffect } from "react";
 // import resList from "../Utils/MockData";
 import Shimmer from "./Shimmer";
@@ -17,7 +17,10 @@ const Body = () => {
     const [searchText, setSearchText] = useState("");
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
-    console.log("Body Rendered")
+    // higher order function
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+    console.log("Body Rendered", listofRestaurants);
     
     // Normal JS Variable
     //let listofRestaurants = [];
@@ -90,7 +93,7 @@ const Body = () => {
 
      if (onlineStatus === false) 
         return (
-        <h1>Looks like you're offline!! Please check your internet connection;
+        <h1 className="p-4 m-4 text-center font-bold">Looks like you're offline!! Please check your internet connection;
         </h1>
      )
 
@@ -137,7 +140,13 @@ const Body = () => {
             {/* <RestaurantCard  resName="Meghana Foods" cuisine="Biryani, North Indian, Asian"/>
             <RestaurantCard resName="KFC" cuisine="Burger, Fast Food" /> */}
             {filteredRestaurant.map((restaurant) => (
-                <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id} ><RestaurantCard resData={restaurant} /> </Link>
+                <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id} >
+
+                {/* if the restaurant is promoted then add a promoted label to it. */}
+
+                {restaurant.info.promoted
+                    ?(<RestaurantCardPromoted resData={restaurant}/>) : (<RestaurantCard resData={restaurant}/>)} 
+                </Link>
             ))
             }
             </div>

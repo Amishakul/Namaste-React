@@ -1,0 +1,9 @@
+Higher order component is a function, that takes a component and returns a component. At the end higher order function is a normal js function.
+
+Higher order component takes an exisiting component -> it enhances the component/modify/twicks it a little -> And then returns it back as a new modified component
+
+resData -> Props
+
+UI of a website contains -> what all you write in JSX (html tags)
+Data layer of a website contains -> props, usestate, local variables, cury brackets inside jsx (js code)
+

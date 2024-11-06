@@ -21,4 +21,22 @@ const RestaurantCard = (props) => {
     );
 };
 
+
+// Higher Order Component
+
+// Input - RestaurantCard => Output - RestaurantCardPromoted
+
+export const withPromotedLabel = (RestaurantCard) => {
+    return (props) => { // returns an component after enhancing the component
+        return ( // component returns an piece of jsx
+            <div>
+                <label>Promoted</label> 
+                <RestaurantCard {...props}/>
+            </div>
+        )
+    }
+}
+
+// the above higher order function is an enhanced version of the resaurant card with an promoted label
+
 export default RestaurantCard;
