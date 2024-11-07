@@ -46,7 +46,7 @@ const RestaurantMenu = () => {
 
             {/* categories accordions */}
             {categories.map((category) => (
-                <RestaurantCategory data={category?.card?.card}/> // passing props to  restaurantcategory component
+                <RestaurantCategory key={category?.card?.card?.title} data={category?.card?.card}/> // passing props to  restaurantcategory component
             ))}
 
 

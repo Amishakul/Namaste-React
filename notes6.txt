@@ -10,3 +10,5 @@ Data layer of a website contains -> props, usestate, local variables, cury brack
 There are 2 ways of passing props:
 1. The way how props are passed in body and restaurant card component 
 2. The 2nd way how props are passed in restaurant menu and restaurant category, restaurant category and itemlist
+
+Interview Question: Build a accordion
