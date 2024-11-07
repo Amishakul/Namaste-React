@@ -7,3 +7,6 @@ resData -> Props
 UI of a website contains -> what all you write in JSX (html tags)
 Data layer of a website contains -> props, usestate, local variables, cury brackets inside jsx (js code)
 
+There are 2 ways of passing props:
+1. The way how props are passed in body and restaurant card component 
+2. The 2nd way how props are passed in restaurant menu and restaurant category, restaurant category and itemlist

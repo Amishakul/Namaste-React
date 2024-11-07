@@ -22,6 +22,8 @@ const RestaurantCard = (props) => {
 };
 
 
+
+
 // Higher Order Component
 
 // Input - RestaurantCard => Output - RestaurantCardPromoted
