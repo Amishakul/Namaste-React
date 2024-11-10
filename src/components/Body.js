@@ -1,9 +1,10 @@
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 // import resList from "../Utils/MockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
+import UserContext from "../Utils/UserContext";
 
 const Body = () => {
 
@@ -89,13 +90,15 @@ const Body = () => {
 
      };
 
-     const onlineStatus = useOnlineStatus();
+     const onlineStatus = useOnlineStatus(); // custom hook
 
      if (onlineStatus === false) 
         return (
         <h1 className="p-4 m-4 text-center font-bold">Looks like you're offline!! Please check your internet connection;
         </h1>
      )
+
+     const {loggedInUser, setUserName} = useContext(UserContext); // context hook
 
     // Conditional Rendering: Rendering on the basis of condition
     // if(listofRestaurants.length === 0) {
@@ -133,6 +136,11 @@ const Body = () => {
             }}>
             Top Rated Restaurants
             </button>
+            </div>
+
+            <div className="search m-4 p-4 flex items-center">
+                <label className="p-2">UserName</label>
+                <input className="border border-black p-2" value={loggedInUser} onChange={(e) => setUserName(e.target.value)}></input>
             </div>
 
             </div>

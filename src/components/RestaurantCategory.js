@@ -1,12 +1,14 @@
-import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({data}) => {
-    const [showItems, setShowItems] = useState(false);
+const RestaurantCategory = ({data, showItems, setShowIndex, dummy }) => {
+    
+    // I do not want restaurant category to have its own state
+    // const [showItems, setShowItems] = useState(false);
 
 
     const handleClick = () => {
-        setShowItems(!showItems)
+        // setShowItems(!showItems)
+        setShowIndex();
     }
 
 
@@ -23,7 +25,9 @@ const RestaurantCategory = ({data}) => {
             <span> ⬇️ </span>
         </div>
 
-        { showItems && <ItemList items = {data?.itemCards}/>}
+        { showItems && <ItemList items = {data?.itemCards} 
+            dummy ={dummy}
+        />}
         </div> 
         </div> // passing props to ItemList component
     );

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,6 +8,7 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./Utils/UserContext";
 // import Grocery from "./components/Grocery";
 
 // Chunking, Code Splitting, Dynamic bundling, lazy loading, on demand loading, dynamic import(all the code does not comes at once.)
@@ -17,12 +18,32 @@ import RestaurantMenu from "./components/RestaurantMenu";
 const Grocery = lazy(() => import("./components/Grocery")); // lazy is a call back function which takes import function and this import function has path of the component which is to be loaded i.e. Grocery component in this case. This lazy function is provided to us as a function by react itself.
 
 const AppLayout = () => {
+    
+    const [userName, setUserName] = useState();
+    
+    // authentication
+
+    useEffect(() => {
+        //Make an API call and send username and password
+
+        const data = {
+            name: "Amisha Kulkarni"
+        };
+        setUserName(data.name);
+
+    }, []);
+    
+    
     return (
+        // outside of this context we will have "Default Value"
+        <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
+
         <div className="app">
         <Header />
         <Outlet />
         
         </div>
+        </UserContext.Provider> // This UserContext Provider will be present in very component of the app, and whenever this loggedInUser is used it will get replaced by Amisha Kulkarni instead of the default value set. Basically Over writing the default value is done over here.
     );
 
 };

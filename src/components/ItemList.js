@@ -1,8 +1,8 @@
 import { CDN_URL } from "../Utils/constants";
 
-const ItemList = ({items}) => { // pass a prop
+const ItemList = ({items, dummy}) => { // pass a prop
 
-    //console.log(items);
+    console.log(dummy);
 
     return (
         <div>

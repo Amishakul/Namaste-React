@@ -12,3 +12,54 @@ There are 2 ways of passing props:
 2. The 2nd way how props are passed in restaurant menu and restaurant category, restaurant category and itemlist
 
 Interview Question: Build a accordion
+
+All the accordions have their own showitems i.e. all the categories of restaurant have their own states (showitems)
+
+All the categories are mananging their own states
+
+props comes from its parent
+
+I want restaurant menu to control all the categories of restaurant.
+
+When restaurant category was having its own state, it was a an uncontrolled component. 
+
+Now restaurant category is an controlled component, because its parent component i.e. restaurant menu component is controlling and mananging the state of restaurant category component.
+
+so, restaurant category now has no state of its own
+
+Feature to build : At a time only 1 accordion should be expanded
+
+🔴 Lifting the state up is important Interview question 🔴
+
+1. showitems = {false} -> close / collpase all the restaurant categories
+2. showitems = {true} -> expand all the accordions (restaurant categories)
+3. just expand the 1st accordion -> showitems = {index === 0 && true}
+4. showitems = {index === 1 ? true : false} -> if index 1 accordion is clicked expand it only otherwise do not expand any other accordion
+5. showItems = {index === showIndex ? true : false} -> if showIndex is 0 then index is also 0 so it is true. i.e. 0th accordion will get expand. -> this is changing using usestate now -> const [showIndex, setShowIndex] = useState(0) i.e. 0th accordion will get expand
+
+likewise, it const [showIndex, setShowIndex] = useState(1) i.e. 1st accordion will expand
+
+setShowIndex is different all the time as we click on each different accordion each time so the value of index/ setShowIndex keeps on changing and gets updated to setShowIndex, whenever setShowIndex is called.
+
+ou're already passing showItems to control the visibility of the item list and calling setShowIndex to update the state in the parent component.
+
+data flows from top to bottom
+
+State management -> parent controls its childrens
+
+react context -> to avoid props drilling problem, a global place where your data is stored and pass on to different components
+
+porps drilling -> manually each time passing props to each component
+
+🔴 why wrapped inside a arrow function -> setShowIndex={() => handleToogle(index)} -> 
+
+1. You can't simply pass handleToogle(index) as a prop, because that would immediately invoke the function instead of passing it as a function to be invoked later.
+
+In this case, handleToogle(index) is a function call with an argument (index). If you just pass handleToogle(index), it will execute immediately when the component renders, rather than waiting for an event like a click.
+
+2. Arrow Function to Wrap the Call:
+To ensure that handleToogle(index) is called only when needed (e.g., when the user clicks), you use an arrow function to wrap the function call. This means that setShowIndex will receive a function, and when setShowIndex is triggered (in the child component), the arrow function will be executed, which in turn calls handleToogle(index) with the correct index argument.
+
+
+🔴 Context is a global space that I can provide to whole app or even just a small portion of the app. I can create multiple context(for eg. lets say creating a separate context for header and a separate context for whole app(body and other components)). And i can over writing anywhere i want to. 🔴
+
