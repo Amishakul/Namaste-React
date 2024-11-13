@@ -74,4 +74,10 @@ const setListOfRestaurants = arr[1];
 # Single page application is just one page just the components are getting interchange
 
 
-
+# Redux Toolkit
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app
+- Slice (cartSlice)
+- Dispatch(action)
+- Selector

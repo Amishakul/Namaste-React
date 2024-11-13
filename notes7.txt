@@ -1,0 +1,32 @@
+Redux
+
+Redux works at the data layer of our web application.
+
+React and Redux is separate library
+
+Redux is used for mananging state. Zustand is also another one.
+
+Redux offers easy debugging
+
+Redux is used with react moslty
+
+1. React-Redux
+2. Redux Toolkit
+
+We will not use vallina redux, we will use react-Toolkit and react-redux which is bridge between react and redux.
+
+
+
+Making Cart component using redux:
+
+When you press the add button -> It dispatches an action -> Which calls the reducer function -> Which updates/modifies the slice of our redux store -> our slice will be updated (item will get added to the cart) ---> This is writing the data.
+
+
+How to read the data from cart slice ? 
+Suppose you want to read the data from the cart slice and display the data which is read on the header component then -> so you will use Selector and this Selector will give you the data from the cart slice to the header component. 
+
+Subscribing to the store -> Header component has Subscribed to the store (cart slice) it means that the header component is now in sink with the cart slice. Whenever the cart slice store data updates, redux automatically updates the header component.
+
+And we Subscribe using a selector.
+
+

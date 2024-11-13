@@ -63,3 +63,5 @@ To ensure that handleToogle(index) is called only when needed (e.g., when the us
 
 🔴 Context is a global space that I can provide to whole app or even just a small portion of the app. I can create multiple context(for eg. lets say creating a separate context for header and a separate context for whole app(body and other components)). And i can over writing anywhere i want to. 🔴
 
+
+
