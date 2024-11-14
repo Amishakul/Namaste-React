@@ -9,6 +9,10 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./Utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./Utils/appStore";
+import Cart from "./components/Cart";
+
 // import Grocery from "./components/Grocery";
 
 // Chunking, Code Splitting, Dynamic bundling, lazy loading, on demand loading, dynamic import(all the code does not comes at once.)
@@ -35,15 +39,21 @@ const AppLayout = () => {
     
     
     return (
-        // outside of this context we will have "Default Value"
-        <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
+        <Provider store={appStore}>
+        {/* pass store as a prop to the provider */}
+
+        {/* outside of this context we will have "Default Value" */}
+        <UserContext.Provider value={{loggedInUser: userName, setUserName}}> 
 
         <div className="app">
         <Header />
         <Outlet />
         
         </div>
-        </UserContext.Provider> // This UserContext Provider will be present in very component of the app, and whenever this loggedInUser is used it will get replaced by Amisha Kulkarni instead of the default value set. Basically Over writing the default value is done over here.
+        </UserContext.Provider> 
+        {/* This UserContext Provider will be present in very component of the app, and whenever this loggedInUser is used it will get replaced by Amisha Kulkarni instead of the default value set. Basically Over writing the default value is done over here. */}
+
+        </Provider>
     );
 
 };
@@ -73,6 +83,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu/>,
+            },
+            {
+            path: "/cart",
+            element: <Cart/>,
             },
             
         ],

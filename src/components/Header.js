@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
 import UserContext from "../Utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const [btnNameReact, setBtnNameReact] = useState("Login");
@@ -12,6 +13,17 @@ const Header = () => {
 
     const {loggedInUser} = useContext(UserContext);
     console.log(loggedInUser); // context hook
+
+
+    // Selector -> it is a hook, useselector hook -> it gives access to the store. Subscribing to the store using a Selector i.e. reading the data from the store.
+    // Whenever my store items will modify my cartItems will also get modify.
+    
+    const cartItems = useSelector((store) => store.cart.items);
+    console.log(cartItems);
+
+
+
+
 
     useEffect(() => {
         console.log("useEffect called")
@@ -29,7 +41,11 @@ const Header = () => {
                     <li className="px-4"><Link to="/about"> About Us</Link></li>
                     <li className="px-4"><Link to="/contact">Contact Us</Link></li>
                     <li className="px-4"><Link to="/grocery">Grocery</Link></li>
-                    <li className="px-4">Cart</li>
+                    <li className="px-4 font-bold text-xl">
+                    <Link to="/cart"> Cart -  ({cartItems.length} items)
+                    </Link>
+                    </li>
+                    
                     <button className="login px-4" onClick={() => {
                         btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login");
                     }}>{btnNameReact}</button> 

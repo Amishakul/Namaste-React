@@ -8,7 +8,9 @@ Redux is used for mananging state. Zustand is also another one.
 
 Redux offers easy debugging
 
-Redux is used with react moslty
+Redux is used with react mostly
+
+Redux is used to for managing data 
 
 1. React-Redux
 2. Redux Toolkit
@@ -30,3 +32,13 @@ Subscribing to the store -> Header component has Subscribed to the store (cart s
 And we Subscribe using a selector.
 
 
+{
+    actions: {
+        addItem, removeItem, clearCart
+    },
+     
+    reducer function for each action
+}
+
+
+for each action we have a reducer function, so we have a reducer function which is mapped to each individual action 
