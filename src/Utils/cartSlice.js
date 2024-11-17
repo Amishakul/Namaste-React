@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 
 // cartSlice has some configurations-> object, 
@@ -18,6 +18,7 @@ const cartSlice = createSlice({
             state.items.pop();
         },
         clearCart: (state, action) => {
+            console.log(current(state));
             state.items.length = 0; // will make state i.e. items as [] -> empty array
         }
 

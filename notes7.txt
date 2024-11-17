@@ -1,4 +1,4 @@
-Redux
+Redux 🔴 => 
 
 Redux works at the data layer of our web application.
 
@@ -41,4 +41,58 @@ And we Subscribe using a selector.
 }
 
 
-for each action we have a reducer function, so we have a reducer function which is mapped to each individual action 
+for each action we have a reducer function, so we have a reducer function which is mapped to each individual action.
+
+
+
+
+Redux Interview questions:
+
+1. This below code will decrease the performance of the app, because first we are Subscribing to the whole store and then selecting the desire portion we want, i.e. cart.items in this case:
+
+const store = useSelector((store) => store);
+const cartItems = store.cart.items;
+
+But, this is the optimize way:
+
+const cartItems = useSelector((store) => store.cart.items);
+
+Always select/Subscribe specific/small portion of the store.
+
+Here, in this case it is Subscribed to only cart item from the store. i.e. only a specific thing
+
+
+2. While creating appStore the term used here is reducer. Because it is one big reducer for your entire app. And this single big reducer can contain multiple small reducers.
+But when we create slice, we write the term reducers, because we create multiple reducers.
+
+A reducer is combination of various small reducers
+
+While exporting we use reducer, which is combination of multiple reducer functions. (in cartslice.js)
+
+and in appstore.js we use term reducer, which is combination of multiple reducer slices.
+
+3. In Vanialla(older) Redux => DON'T MUTATE STATE -> don't direclty modify the state, instead make a copy of the state first and then modify. And returning for mandotory.
+
+const newState = [...state];
+newState.items.push(action.payload);
+return newState;
+
+But in redux Toolkit we have to MUTATE the STATE
+
+Immer library is used to find difference between original state, mutated state and gives you back the new state i.e. immutable state.
+
+Redux Toolkit uses immer behind the scenes.
+
+We can't write this => state = ["amisha"]; Because by doing this we are not mutating the state, we are just giving out the reference 
+i.e. originalState = {items: ["pizza"]}
+console.log(state) -> ["pizza"]
+
+state = []; -> local copy
+console.log(state) -> [] -> it will just give you an empty array, but the original array of pizza will not get modify, it remains the same.
+
+
+
+RTK - either mutate the existing state or return a new state
+
+1. State.item.length = 0; -> originalState = []
+2. return {items: [] }; -> this new object[] will be replaced inside originalState = { items: [] }
