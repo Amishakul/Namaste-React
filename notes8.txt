@@ -1,0 +1,21 @@
+Testing:
+1. Manual testing -> Checking the application that each feature/function is working as it is stated in the application
+2. Writing test cases which tests our application automatically.
+
+__ -> Dunder method
+
+
+
+
+In simple terms, screen is a tool provided by the testing library to help you easily find and interact with elements on the web page you are testing.
+
+Think of it as a way to "look" at the page and find things on it.
+
+Here's how it works:
+
+When you write tests for your web app, you want to check if certain elements (like buttons, text, or inputs) are showing up or behaving as expected.
+screen helps you "look" at the page where your app is rendered and find those elements.
+For example:
+
+screen.getByRole("button") is like asking "Hey, do I have a button on my page?". It goes and checks the page to find a button and gives it to you.
+expect(loginButton).toBeInTheDocument() then says "I expect that button to be there". If the button is missing, the test will fail.

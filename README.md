@@ -47,7 +47,7 @@ Virtual DOM is the js object representation of HTML Tags
 # React Hooks
 Hooks are Normal JS utility functions
 1. useState() - Superpowerful state variables in react
-2. useEffect()
+2. useEffect() - To handle side works.
 
 # whenever a state variable updates, react re-renders the component.
 
@@ -81,3 +81,27 @@ const setListOfRestaurants = arr[1];
 - Slice (cartSlice)
 - Dispatch(action)
 - Selector
+
+# Types of Testing (Developer)
+- Unit Testing(testing react components in isolation, testing only 1 component at a time)
+- Integration Testing(testing those components which interact with multiple components)
+- End to End Testing - e2e testing(testing from when user ends the application till the user leaves the application, this all flow cycle of the user is been tested)
+
+1. React Testing library is built on top of dom testing library
+2. React testing library uses jest at back of it for testing
+3. Parcel uses babel behind the scenes
+4. Jsdom is like a browser which helps to run test cases for an application 
+
+# Setting up testing in our app
+- Install React Testing Library
+- Installed Jest
+- Installed Babel dependencies
+- Configure Babel
+- Configure Parcel config file to disable default babel transpilation.
+- Jest configuration (npx jest --init)
+- Install jsdom library
+- Install @babel/preset-react - to make JSX work in test cases
+- Include @babel/preset-react inside my babel config
+- Install npm i -D @testing-library/jest-dom
+
+npm run test -> for run test case
