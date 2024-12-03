@@ -19,3 +19,11 @@ For example:
 
 screen.getByRole("button") is like asking "Hey, do I have a button on my page?". It goes and checks the page to find a button and gives it to you.
 expect(loginButton).toBeInTheDocument() then says "I expect that button to be there". If the button is missing, the test will fail.
+
+fetch is given to us by browser not javascript
+
+npm run watch-test
+
+onChange is an event listner which is used type on the search bar and change the values of the search bar as we type, to update our search bar
+
+jest.fn() gives you MOCK function.

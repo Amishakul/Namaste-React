@@ -9,6 +9,23 @@ import "@testing-library/jest-dom";
 
 describe("Contact Us page test case" , () => {
 
+    beforeAll(() => {
+        console.Log("Before All");
+    })
+
+    beforeEach(() => {
+        console.log("Before Each");
+    })
+
+    afterAll(() => {
+        console.Log("After All");
+    })
+    
+    afterEach(() => {
+        console.log("After Each");
+    })
+
+
     test("Should load contact us component", () => {
         render(<Contact/>);
     
@@ -38,7 +55,7 @@ describe("Contact Us page test case" , () => {
     test("Should load input name inside contact us component", () => {
         render(<Contact/>);
     
-        const inputname = screen.getByPlaceholderText("name");
+        const inputname = screen.getByPlaceholderText("Your Name");
     
     
         // Assertion

@@ -113,7 +113,7 @@ const Body = () => {
         <div className="body">
             <div className="filter  flex justify-center items-center space-x-4 m-4">
             <div className="search m-4 p-4 flex items-center space-x-4">
-                <input type="text" className="border border-solid border-gray-300 rounded-lg p-3 w-full sm:w-80 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300 ease-in-out" placeholder="Search for restaurants..."
+                <input type="text"  data-testid = "searchInput" className="border border-solid border-gray-300 rounded-lg p-3 w-full sm:w-80 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300 ease-in-out" placeholder="Search for restaurants..."
                 value={searchText} onChange={(e) => {
                     setSearchText(e.target.value); // to update the value on the search bar as user types and to update that value to searchText via setSearchText using onchange event.
                     // WE ARE USING SEARCHTEXT USESTATE SO AS WHEN THE USER TYPES A KEYWORD IN THE SEARCH BOX AND PRESS SEARCH BUTTON, THE UI WILL GET UPDATE

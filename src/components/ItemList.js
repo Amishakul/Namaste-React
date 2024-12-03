@@ -16,7 +16,7 @@ const ItemList = ({items, dummy}) => { // pass a prop
     return (
         <div>
             {items.map((item) => (
-                <div className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between" key={item.card.info.id}>
+                <div data-testid = "foodItems" className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between" key={item.card.info.id}>
                 
                 <div className="w-9/12">
                     <div className="py-2 font-bold"><span>{item.card.info.name}</span>
