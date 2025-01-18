@@ -20,7 +20,7 @@ const ItemList = ({items, dummy}) => { // pass a prop
                 
                 <div className="w-9/12">
                     <div className="py-2 font-bold"><span>{item.card.info.name}</span>
-                    <span> - ₹ {item.card.info.price ? item.card.info.price / 100 : item.card.info.defaultPrice}</span>
+                    <span> - ₹ {item.card.info.price ? item.card.info.price / 100 : item.card.info.defaultPrice / 100}</span>
                     </div>
                     <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed mt-2">{item.card.info.description}</p>
                     </div>

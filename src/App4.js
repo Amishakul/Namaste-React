@@ -19,7 +19,7 @@ import Cart from "./components/Cart";
 // Lazy loading: we will not load all the components all at once, we will load few components only when required, lazy loading
 
 
-const Grocery = lazy(() => import("./components/Grocery")); // lazy is a call back function which takes import function and this import function has path of the component which is to be loaded i.e. Grocery component in this case. This lazy function is provided to us as a function by react itself.
+// const Grocery = lazy(() => import("./components/Grocery")); // lazy is a call back function which takes import function and this import function has path of the component which is to be loaded i.e. Grocery component in this case. This lazy function is provided to us as a function by react itself.
 
 const AppLayout = () => {
     
@@ -76,10 +76,10 @@ const appRouter = createBrowserRouter([
                 path: "/contact",
                 element: <Contact/>,
             },
-            {
-                path: "/grocery",
-                element: <Suspense fallback={<h1>Loading....</h1>}><Grocery/></Suspense>,
-            },
+            // {
+            //     path: "/grocery",
+            //     element: <Suspense fallback={<h1>Loading....</h1>}><Grocery/></Suspense>,
+            // },
             {
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu/>,

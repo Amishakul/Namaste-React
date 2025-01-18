@@ -19,9 +19,16 @@ const RestaurantCard = (props) => {
         <h3 className="font-bold text-xl text-gray-800 hover:text-blue-600 transition-colors duration-300 truncate">{name}</h3>
         <p className="text-gray-600 text-sm truncate">{cuisines.join(" , ")}</p>
         <div className="flex items-center space-x-2 mt-2">
-        <span className="text-yellow-400 text-xl">{avgRating}</span>
-        <span className="text-gray-600 text-sm">⭐</span>
-        </div>
+    {avgRating ? (
+        <>
+            <span className="text-yellow-400 text-xl">{avgRating}</span>
+            <span className="text-gray-600 text-sm">⭐</span>
+        </>
+    ) : (
+        <span className="text-gray-400 text-sm">No Rating</span>
+    )}
+</div>
+
 
         <div className="mt-2 text-sm text-gray-600">
         <p className="font-medium">Cost for two: <span className="text-green-600">{costForTwo}</span></p>

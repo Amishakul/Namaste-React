@@ -29,7 +29,7 @@ const Header = () => {
     }, [btnNameReact]);
 
     return (
-        <div className="bg-white shadow-lg rounded-lg m-4 p-4 transition-all duration-300 ease-in-out hover:shadow-2xl">
+        <div className="bg-white shadow-lg rounded-lg m-4 p-4 transition-all duration-300 ease-in-out hover:shadow-2xl sticky top-0 z-50">
 
         {/* <div className="flex justify-between bg-pink-100 shadow-lg sm:bg-yellow-50 lg:bg-green-50"> */}
 
@@ -53,7 +53,7 @@ const Header = () => {
                     {/* <li><a href="/about">About Us</a></li> */}
                     <li className="hover:text-blue-600 transition-colors duration-300"><Link to="/about"> About Us</Link></li>
                     <li className="hover:text-blue-600 transition-colors duration-300"><Link to="/contact">Contact Us</Link></li>
-                    <li className="hover:text-blue-600 transition-colors duration-300"><Link to="/grocery">Grocery</Link></li>
+                    {/* <li className="hover:text-blue-600 transition-colors duration-300"><Link to="/grocery">Grocery</Link></li> */}
 
                     <li className="flex items-center space-x-1">
                     <Link to="/cart" className="flex items-center space-x-1 hover:text-blue-600 transition-colors duration-300"> 
