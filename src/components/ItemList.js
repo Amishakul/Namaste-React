@@ -29,7 +29,17 @@ const ItemList = ({items, dummy}) => { // pass a prop
                     <div className="absolute">
                     <button className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg" onClick={() => handleAddItem(item)} > Add + </button>
                     </div>
-                    <img src={CDN_URL + item.card.info.imageId} className="w-full"/>
+                    {item.card.info.imageId ? (
+                            <img 
+                                src={CDN_URL + item.card.info.imageId} 
+                                className="w-full" 
+                                alt={item.card.info.name} 
+                            />
+                        ) : (
+                            <div className="w-full h-48 flex items-center justify-center bg-gray-200 text-center text-sm text-gray-600">
+                                Image not available
+                            </div>
+                        )}
                 </div>
                 </div>
             ))}
