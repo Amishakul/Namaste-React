@@ -10,9 +10,19 @@ const RestaurantCard = (props) => {
     return (
         // <div className="res-card" style={styleCard}>
         <div data-testid = "resCard" className="res-card m-4 p-4 w-[280px] h-[380px] rounded-lg bg-white shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105 ">
-        <img className="res-logo rounded-lg w-full h-[150px] object-cover"
-        alt="res-logo" 
-        src={CDN_URL + cloudinaryImageId} />
+        <div className="w-full h-[150px] flex items-center justify-center bg-gray-200">
+                {cloudinaryImageId ? (
+                    <img
+                        className="res-logo rounded-lg w-full h-[150px] object-cover"
+                        alt="res-logo"
+                        src={CDN_URL + cloudinaryImageId}
+                    />
+                ) : (
+                    <div className="text-center text-sm text-gray-600">
+                        Image not available
+                    </div>
+                )}
+            </div>
 
         <div className="mt-4 h-[200px] overflow-hidden">
         
