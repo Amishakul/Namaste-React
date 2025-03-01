@@ -15,7 +15,10 @@ const cartSlice = createSlice({
             state.items.push(action.payload);
         },
         removeItem: (state, action) => {
-            state.items.pop();
+            const index = action.payload; // Expecting index
+            if (index > -1 && index < state.items.length) {
+                state.items.splice(index, 1);
+            }
         },
         clearCart: (state, action) => {
             console.log(current(state));

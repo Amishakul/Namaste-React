@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import { addItem } from "../Utils/cartSlice";
+import { addItem, removeItem } from "../Utils/cartSlice";
 import { CDN_URL } from "../Utils/constants";
 
-const ItemList = ({items, dummy}) => { // pass a prop
+const ItemList = ({items, isCart, dummy}) => { // pass a prop
     const dispatch = useDispatch(); // dispatch hook
 
     const handleAddItem = (item) => {
@@ -10,12 +10,16 @@ const ItemList = ({items, dummy}) => { // pass a prop
         dispatch(addItem(item)) ; 
      };
 
+     const handledeleteItem = (index) => {
+        dispatch(removeItem(index))
+     };
+
     // whatever i pass here in this additem action will get pass on to action.payload 
     // {payload: "pizza"} -> object passed on to the action arrgument present in addItem reducer function
 
     return (
         <div>
-            {items.map((item) => (
+            {items.map((item, index) => (
                 <div data-testid = "foodItems" className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between" key={item.card.info.id}>
                 
                 <div className="w-9/12">
@@ -28,7 +32,17 @@ const ItemList = ({items, dummy}) => { // pass a prop
                     <div className="w-3/12 p-4">
                     <div className="absolute">
                     <button className="p-2 mx-16 rounded-lg bg-black text-white shadow-lg" onClick={() => handleAddItem(item)} > Add + </button>
+
+                    {isCart && (
+                    <div>
+                    <button className="p-2 mx-[27%] rounded-lg bg-red-500 text-white shadow-lg mt-[53%]" onClick={() => handledeleteItem(index)}>Remove -</button>
                     </div>
+                    )}
+                    
+                    </div>
+
+                    
+                    
                     {item.card.info.imageId ? (
                             <img 
                                 src={CDN_URL + item.card.info.imageId} 
