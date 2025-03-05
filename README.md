@@ -105,3 +105,20 @@ const setListOfRestaurants = arr[1];
 - Install npm i -D @testing-library/jest-dom
 
 npm run test -> for run test case
+
+
+![Screenshot (614)](https://github.com/user-attachments/assets/ba78cef6-da4b-4766-88de-9188b1869844)
+![Screenshot (613)](https://github.com/user-attachments/assets/699af888-b2b8-4814-8b74-1d18da074ac8)
+![Screenshot (612)](https://github.com/user-attachments/assets/b3b0e8a9-b6f3-46fc-b2d0-936daa65055b)
+![Screenshot (611)](https://github.com/user-attachments/assets/29055683-82dd-4bb8-a5a9-b2489f808ff5)
+![Screenshot (610)](https://github.com/user-attachments/assets/097749f8-77db-4f12-b4a7-eaadcaa86736)
+![Screenshot (609)](https://github.com/user-attachments/assets/22df78d0-f708-44f6-8591-3b5d95107c9a)
+![Screenshot (608)](https://github.com/user-attachments/assets/de43d78e-6793-4497-a027-869117eef5c7)
+![Screenshot (607)](https://github.com/user-attachments/assets/2bc0ae7d-0eba-45b8-9697-3ff0f722ca5e)
+![Screenshot (606)](https://github.com/user-attachments/assets/1deef252-8267-471e-995f-4e1795926e95)
+![Screenshot (605)](https://github.com/user-attachments/assets/01935e25-6ada-45c5-a8dc-99c7d2759ba7)
+![Screenshot (604)](https://github.com/user-attachments/assets/e3033c2c-1f06-4575-8d0f-3bee808e8ba0)
+![Screenshot (603)](https://github.com/user-attachments/assets/57485e1f-2980-442e-a31a-3ca965702ab0)
+![Screenshot (602)](https://github.com/user-attachments/assets/cc14361d-f257-459b-ab17-f61151fa8667)
+![Screenshot (601)](https://github.com/user-attachments/assets/4addf596-e47e-4c7c-b84b-31782ad72b8c)
+![Screenshot (600)](https://github.com/user-attachments/assets/6759e076-1ca5-4c55-89d2-361d29afe16e)
