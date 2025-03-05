@@ -106,9 +106,6 @@ const setListOfRestaurants = arr[1];
 
 # npm run test -> for run test case
 
-
-
-
 ![Screenshot (600)](https://github.com/user-attachments/assets/7466da7a-a209-4753-800a-bb8c17648eeb)
 ![Screenshot (601)](https://github.com/user-attachments/assets/fef9ea0d-810a-484f-85e3-e8fd709ab8d2)
 ![Screenshot (602)](https://github.com/user-attachments/assets/d6377b88-cbf2-4684-a7fa-dbcf19a2b67a)
