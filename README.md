@@ -104,7 +104,9 @@ const setListOfRestaurants = arr[1];
 - Include @babel/preset-react inside my babel config
 - Install npm i -D @testing-library/jest-dom
 
-npm run test -> for run test case
+# npm run test -> for run test case
+
+
 
 
 ![Screenshot (600)](https://github.com/user-attachments/assets/7466da7a-a209-4753-800a-bb8c17648eeb)
