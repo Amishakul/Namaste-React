@@ -7,11 +7,10 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./Utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./Utils/appStore";
-import Cart from "./components/Cart";
+// import Cart from "./components/Cart";
 
 // import Grocery from "./components/Grocery";
 
@@ -20,6 +19,8 @@ import Cart from "./components/Cart";
 
 
 // const Grocery = lazy(() => import("./components/Grocery")); // lazy is a call back function which takes import function and this import function has path of the component which is to be loaded i.e. Grocery component in this case. This lazy function is provided to us as a function by react itself.
+
+const Cart = lazy(() => import("./components/Cart"));
 
 const AppLayout = () => {
     
@@ -86,7 +87,7 @@ const appRouter = createBrowserRouter([
             },
             {
             path: "/cart",
-            element: <Cart/>,
+            element: <Suspense fallback={<h1>Loading....</h1>}><Cart/></Suspense>,
             },
             
         ],
