@@ -85,7 +85,7 @@ const setListOfRestaurants = arr[1];
 # Types of Testing (Developer)
 - Unit Testing(testing react components in isolation, testing only 1 component at a time)
 - Integration Testing(testing those components which interact with multiple components)
-- End to End Testing - e2e testing(testing from when user ends the application till the user leaves the application, this all flow cycle of the user is been tested)
+- End to End Testing - e2e testing(testing from when user starts the application till the user leaves the application, this all flow cycle of the user is been tested)
 
 1. React Testing library is built on top of dom testing library
 2. React testing library uses jest at back of it for testing
