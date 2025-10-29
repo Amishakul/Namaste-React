@@ -1,4 +1,4 @@
-import { CDN_URL } from "../Utils/constants";
+import { RESTAURANT_DUMMY_IMAGES } from "../Utils/constants";
 
 
 const RestaurantCard = (props) => {
@@ -15,7 +15,7 @@ const RestaurantCard = (props) => {
                     <img
                         className="res-logo rounded-lg w-full h-[150px] object-cover"
                         alt="res-logo"
-                        src={CDN_URL + cloudinaryImageId}
+                        src={RESTAURANT_DUMMY_IMAGES[name] }
                     />
                 ) : (
                     <div className="text-center text-sm text-gray-600">
@@ -42,7 +42,7 @@ const RestaurantCard = (props) => {
 
         <div className="mt-2 text-sm text-gray-600">
         <p className="font-medium">Cost for two: <span className="text-green-600">{costForTwo}</span></p>
-        <p className="text-gray-500">{sla?.slaString}</p>
+        <p className="text-gray-500">Delivery Time: {sla?.deliveryTime + " mins"}</p>
         </div>
         </div>
         </div>
@@ -59,10 +59,28 @@ const RestaurantCard = (props) => {
 
 export const withPromotedLabel = (RestaurantCard) => {
     return (props) => { // returns an component after enhancing the component
+
+        const { aggregatedDiscountInfoV3 } = props?.resData?.info || {};
+
+
         return ( // component returns an piece of jsx
-            <div>
-                <label className="absolute bg-black text-white m-2 p-2 rounded-lg">Promoted</label> 
+            <div className="relative inline-block">
+
+                {/* <label className="absolute bg-black text-white m-2 p-2 rounded-lg">Promoted</label> */}
+
+        {/* Discount Label */}
+{aggregatedDiscountInfoV3 && (
+          <div className="absolute top-2 left-2 bg-green-600 text-white text-xs font-medium px-2 py-1 rounded-lg shadow-md z-10">
+            {aggregatedDiscountInfoV3.header}
+            {aggregatedDiscountInfoV3.subHeader &&
+              ` | ${aggregatedDiscountInfoV3.subHeader}`}
+          </div>
+        )}
+
                 <RestaurantCard {...props}/>
+
+
+                
             </div>
         )
     }

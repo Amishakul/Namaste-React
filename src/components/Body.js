@@ -77,16 +77,21 @@ const Body = () => {
 
     const fetchData = async () => { // async arrow function
         const data = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+            "https://namastedev.com/api/v1/listRestaurants"
         );
 
         const json = await data.json();
         //console.log(json);
-        console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
+        // console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
+
+        console.log(json.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         
         // optional chaining
-        setListOfRestaurant(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurant(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        // setListOfRestaurant(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+        setListOfRestaurant(json.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+        setFilteredRestaurant(json.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
      };
 
@@ -154,7 +159,7 @@ const Body = () => {
 
                 {/* if the restaurant is promoted then add a promoted label to it. */}
 
-                {restaurant.info.promoted
+                {restaurant.info.aggregatedDiscountInfoV3
                     ?(<RestaurantCardPromoted resData={restaurant}/>) : (<RestaurantCard resData={restaurant}/>)} 
                 </Link>
             ))
