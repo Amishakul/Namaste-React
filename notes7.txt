@@ -15,7 +15,7 @@ Redux is used to for managing data
 1. React-Redux
 2. Redux Toolkit
 
-We will not use vallina redux, we will use react-Toolkit and react-redux which is bridge between react and redux.
+We will not use vallina redux, we will use redux-Toolkit and react-redux which is bridge between react and redux.
 
 
 
