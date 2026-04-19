@@ -1,0 +1,120 @@
+Functional component is made to reuse that function again and again in the code
+
+Prop: Properties, we can use prop to pass the data dynamically to the component. Props are just normal arrguments to a function.
+For eg. <RestaurantCard /> functional component is a prop now.
+
+Prop is an js object. React will wrap up everything as an object and pass it as a prop.
+
+💡-> So whenever we need to pass a dynamic data to a component we pass it as a prop
+
+Another way of passing the prop: Destructing of objects
+
+const RestaurantCard = ({resName, cuisine}) => {
+    return (
+        <h3>{resName}</h3>
+        <h4>{cuisine}</h4>
+    )
+}
+
+so here, const {resName, cuisine} = props;
+
+Data comes from backend in the form of json
+
+Config driven UI: Changing the carousal UI on the basis of backend data 
+
+Cloudinary images are CDN
+
+Because of RestaurantCard reusable component we were able to pass dynamic props inside this component (reusable card)
+
+Do not use index as a key in react instead use id
+
+not using keys (not acceptable) <<<< index as a key <<<<<< unique id as key(best pratice)
+
+
+In JavaScript, the ?. operator is known as the optional chaining operator. It allows you to safely access deeply nested properties of an object without having to explicitly check if each level of the object exists.
+
+resData?.data: The ?. operator checks if resData is not null or undefined before attempting to access the data property. If resData is null or undefined, it short-circuits and returns undefined, preventing any error that would occur if you tried to access a property on null or undefined.
+
+Destructuring Assignment: After resData?.data safely returns the data property (or undefined if resData is null or undefined), the destructuring assignment {cloudinaryImageId, name, cuisines, avgRating, costForTwo, deliveryTime} extracts these properties from the data object if it exists.
+
+The ?. operator, known as optional chaining, allows you to safely access properties of an object that might be null or undefined without causing an error. If the object is null or undefined, it returns undefined instead of throwing an error.
+
+Important🔴:
+
+1. we have created RestaurantCard functional component to reuse the card again and again.
+2. We have used prop to dynamically add data to card i.e. not every card will contain same information, so add different information to each card prop is used
+3. Then we have used map function to do Config driven UI. i.e. after some days or months we may have new Restaurants added to our api, or some Restaurants might get removed, so if we manaually write the prop or hardcode the each prop it might create an error like if Restaurant[0] is not present in future or another new Restaurant gets into the list in 1st position or in any position, so to change our app ui as per as changes made in api we have used map function which will make our app as config driven UI.
+
+
+
+
+Meaning of this line: {resList.map((restaurant) => (
+                <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+            ))
+            }
+
+
+resList.map((restaurant) => ... ): This is using the map function to iterate over an array called resList. For each element in this array, the current element is represented by the variable restaurant.
+
+restaurant: This variable represents the current item from resList during each iteration of the map function.
+
+<RestaurantCard key={restaurant.data.id} resData={restaurant} />: For each restaurant, a RestaurantCard component is being created. The key prop is used to give each RestaurantCard a unique identifier. In this case, restaurant.data.id is used as the unique key.
+
+resData={restaurant}: This is passing the entire restaurant object as a prop named resData to the RestaurantCard component. Within the RestaurantCard component, resData will refer to the current restaurant object.
+
+So in summary, restaurant is the current item from resList in each iteration, and resData is the prop name used to pass that restaurant object to the RestaurantCard component.
+
+Note: Here, key={restaurant.data.id} resData={restaurant} -> props
+
+Make a separate file for each component
+
+Always export the file first and then import the file (first give and then take)
+
+Do not keep hardcoded code into your files
+
+By default a file can only export 1 thing not more than 1 --> default export
+
+There are 2 types of export: default export and named export
+
+Making website dynamic means also adding buttons for filtering, etc. Instead of static i.e. read only.
+
+onMousehover is a js event you can use instead of onclick
+
+Hook is a normal js function which is given to us by react and it contains superpowers i.e. state variable
+
+A Local state variable funtionality is available inside the component.
+
+const [listofRestaurants] = useState([]) -> listofRestaurants variable will have default value as empty array 
+
+const [listofRestaurants] = useState(null) -> ListofRestaurants variable will have default value as null
+
+A state variable is created using a hook which gives you array and not using normal JS variable like const hero = "hello"; or const hero = [];
+
+🔴: Normal JS Variable is defined like this: 
+let list = [];
+And updated like this: list = ["abc]; 
+
+const list = [];
+and updated like this: list.push("hello")
+
+In the website all the cards are shown at starting because of listofRestaurants contains default values of all the restaurants and if we want to modify these default values we will use another different variable name as 2nd parameter(setListOfRestaurant) in the state function which will modify the restaurants as per as filters. Instead of using normal JS technique to modify or update.
+
+whenever a state variable updates, react re-renders the component.
+
+React Virtual DOM is an normal JS object just as react element is.
+
+Virtual DOM is representation of actual DOM
+
+Diff Algo finds the difference between the updated virtual DOM and previous virtual DOM
+
+When something changes in the UI it is known as reconciliation
+
+Virtual DOM is the object representation of actual DOM
+
+So whenever a button is clicked a new object is formed and react finds the difference between the updated virtual dom and the previous virtual dom.
+
+And after finding the difference between these vitual dom's then react actually updates the actual DOM (i.e. HTML)
+
+whenever there is change in the state variable react will find out the difference between the virtual dom's and then it will re-render the component, it will update the actual dom.
+
+

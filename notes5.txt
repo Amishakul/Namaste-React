@@ -1,0 +1,111 @@
+Class Based Component 🥈
+
+A functional component is a function which returns a piece of JSX.
+
+A Class based component is a class which extends react.component and it has a render method which returns some piece of JSX, this JSX will be converted to html and will be displayed on the web page.
+
+React.component is given to us by react.
+
+React.component is a class inside react library
+
+Loading a class based component on a web page means creating instance of a class.
+
+when you create instance of a class, constructor is called.
+
+so constructor is the best place to pass props and to create state variables in class based component.
+
+In functional component behind the scenes the state variables are stored inside big state object, react does this behind the scenes.
+
+Loading the component = mounting the component on to the web page.
+
+When a class is created/made/instantiated a constructor is called,
+so first constructor is called and then render method is called
+
+ComponentDidMount is used to make API calls in class based component
+
+
+
+Life Cycle of class-based component 🥈
+
+- Parent constructor
+- Parent render
+- FirstChild constructor
+- FirstChild render
+- SecondChild constructor
+- SecondChild render
+
+Reconcliation Algorithm
+
+DOM UPDATED - IN A SINGLE BATCH
+- FirstChild Component Did mount
+- SecondChild Component Did mount
+- Parent Component Did mount
+
+
+Steps🔴:
+
+1. constructor is called
+2. Render method is called
+3. Then React will update the dom / Load the dom
+4. Then ComponentDidMount is called
+
+
+WORKING:
+
+- As soon as a class is created a constructor is called.
+- Then render is called, but the component i.e. card, is been render with dummy data at initial phase. The state variable is been filled with default dummy data.
+- Now ComponentDidMount was called
+- When ComponentDidMount was called, an api call was made
+- And then our setState variable is been called and updated cycle begins
+- We are not waiting for so long to wait for api data to get feteched, we will initially fetch dummy data.
+- When the setState is called in ComponentDidMount phase, updating of data starts
+- setState updates the state variable, state variable gets updated with the api data
+- When render is called again, 2nd time, Now the state variable is updated with the api data(updating of data happens in ComponentDidMount phase itself).
+- So in update cycle, react will update the DOM, React will calculate the div tag and update the DOM with the new value now(Reconcliation Algorithm)
+- React will update the DOM with new data(data of api)
+- And at last componentDidUpdate is called
+
+
+---- Mounting Cycle -----
+1. constructor (dummy data)
+2. Render (dummy data)
+3. <HTML Dummy data>
+4. ComponentDidMount is called -> <API call>
+5. <this.setState> --> set variable is updated
+
+
+---- Update Cycle -----
+6. Render(API data)
+7. <HTML (new API data)>
+8. componentDidUpdate
+
+Mounting -> showing data on to the UI.
+Unmounting -> Removing the data from the UI
+
+React is just a single page application, we just change the components. or even if we change pages/components it is happening in a single page
+
+
+
+Single Responsiblity Principle: Each component present should have only a single Responsiblity. For eg. The task of restaurant card component should only be to display restaurant cards on the web page. The task of restaurant menu component should only be to display menu for each restaurant.
+
+Modularity: Breaking down the code in different small-small modules so that the code becomes more maintainable and testable. By doing this you get features of Reusablity, maintainable, testable.
+
+useParams is a tool in React Router that helps you get values from the URL.
+
+Use lazy loading to break your code into different small chunks.
+
+1. scss, sass(another way of writing css) -> gives your normal css superpower, it makes writing css in more advanced way and easy way.
+2. styled components (another way of writing css)
+3. material UI
+4. Chakra UI
+5. Ant design
+6. Bootstrap
+7. Tailwind css -> css framework
+
+postcss -> transforming css inside javascript
+
+parcel(bundler) will use postcssrc to understand tailwind.
+
+px -> padding in horizontal; py -> padding in vertical
+
+Tailwind css is very light weight

@@ -1,0 +1,86 @@
+Browser does not understands reactjs, but it understands js as Browser has js engine in it already.
+
+how to get react into our Browser?
+1. using cdn links, where the react is hosted
+2. using npm command
+
+npm helps to manage packages in js, various libraries and packages are installed in js using npm. npm command but does not stands for node package manager. npm contains all the packages
+
+package.json is an configuration for npm. package.json keeps track on what are the versions of all the packages/dependencies present/installed in our app.
+packages are also known as dependencies
+
+bundler helps to bundle the files and pack it together the files present in your app. parcel, vite, webpack these are all bundler which are used to bind all the files present in the app for to create production ready app/website.
+
+There are 2 types of dependencies/packages we can install
+1. dev dependencies -> used in development of app phase
+2. normal dependencies -> used in production of app phase
+
+caret (^) -> will automatically upgrade the minor version of the packages in the app 
+tilde (~) ->  will automatically upgrade the major version of the packages in the app
+
+package-lock-json keeps track of all exact versions of all the dependencies
+
+sha512 -> helps to keep whatever is present on my machine and whatever is present in the production level same
+
+node modules contains data/code of all the installed packages taken from npm (collection of dependencies)
+
+Transitive dependencies: a package/dependency having another package/dependency as its dependency and so on. So node modules have many other packages also other than parcel package, which means parcel has further other packages on which parcel is dependent on.
+
+all the other libraries/packages have its own package.json file in the app because of Transitive dependencies case
+
+package.json: ^7.89.5
+package.lock.json: 7.89.5 (i.e. the exact version of the package excluding its minor and mojor versions)
+
+if we have package.json and package.lock.json files we can recreate all node modules (use command "npm install")
+
+
+"npx parcel index.html" hosted the app on a local server with a port 1234. this activity is done using parcel (development web app)
+
+for installing a package we write npm command and for executing a package we write npx and the package name (i.e. npx parcel)
+
+parcel helps to automatically refresh the browser page when user save changes in the code instead of manually refreshing.
+
+for building the production web app write "npx parcel build index.html (i.e. file name)"
+
+dist folder is running the web app on 1234 server and parcel cache updates the changes made into the code file
+
+
+
+
+npx parcel index5.html means -> executing "npm package parcel" by giving source as index5.html
+
+Now to run the project do "npm run start" or "npm start" for development mode and "npm run build" for production mode
+
+
+
+
+
+Tips:💡
+1. If you do not know how to run a web application just go to package.json file and search for script tag you will get the command to run the project
+
+JSX prevents cross-side scripting attacks for you. i.e. if an malicious api is present and you want to run it as js snippet inside jsx, jsx will not allow it. JSX does not blindly run the js snippet inside it, it sanitizes the js snippet and runs it.
+
+we can also render a react functional component in this way: <Title></Title> inside another react functional component. And we can write <Title /> any number of times.
+
+We can call a react functional component like a Js snippet inside jsx.
+
+const Title = () => (
+    <h1 className = "Read" tabIndex ="5">
+    Namaste react using jsx 🚀
+    </h1>
+)
+
+const HeadingComponent = () => (
+    <div id="container">
+    {Title()}
+    <h1 className="heading">Namaste React Functional Component</h1>
+    </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root));
+
+root.render(<HeadingComponent />);
+
+
+
+👍 Code is readable because of JSX not because of react

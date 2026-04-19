@@ -1,0 +1,37 @@
+Monolith architecture: A whole big project which contains different components in it. (different components are combined in a single big project) components like: api, ui, authentication, sms services, etc
+
+Microservices architecture: different small services for different jobs. i.e. each components are divided into an individual small project, and all these services combine together and forms a big app. for eg. services like: api, ui, authentication, sms services, etc. This concept is known as "Seperation of concern", "Single responsiblity principle". Each service has its own job no one is interferring in between each service
+
+These small services(Microservices) interact with each other to form a big single project.
+
+All these small services run on different specific ports. And all these small services can be written in any programming language.
+
+React has one of the best render mechanism. It can render fast, n no of times
+
+UseState is used to create state variables.
+
+Shimmer UI helps you to show fake cards or fake UI design until the web app retrives actual data from the API.
+
+CORS: CORS stands for Cross-Origin Resource Sharing. If you are making an api call from one origin to different origin i.e. from one domain name to another domain name. eg. api call from zomato to swiggy. or you are making an api call from swiggy to localhost or vice versa, so the browser does not allow this api call. So to bypass this issue, cors is used.
+
+So by using cors, we are not directly making api call to swiggy, we are making direct call to cors and cors is giving us the api data from swiggy.
+
+
+
+UseState is used to render(refresh) the page so that your component changes/ updates dynamically. Which can not be done using normal JS variables. Hence State variables(local variables) are used which is given to us by UseState.
+
+whenever the state variable will change, react will re-render the component.
+
+btnNameReact is a local variable and setBtnNameReact is acting as a function, so whenever this function will be called, btnNameReact variable will get updated with new value.
+
+The whole header component will re-render not only just that login button. Header component is getting render but only the button changes.
+
+Rendering means again calling out or triggering the component(refreshing)
+
+whenever you change the local state variable, react re-renders the entire component
+
+whenever state variable updates, react triggers a reconciliation cycle(re-renders the component)
+
+When you type something in the search box, the whole body component is been re-render, but only the changes are made in the search input box
+
+

@@ -1,0 +1,91 @@
+UseEffect is called when everytime the component renders.
+Dependency array changes the behaviour of it's render. [] -> Dependency array in UseEffect
+
+The first arrgument to UseEffect is callback function and 2nd arrgument is Dependency array
+
+If no Dependency array => UseEffect is called on every component render
+
+If Dependency array is empty = [] => UseEffect is called on intial render(just once)
+
+If the list will be fetched from an API, filtered, or modified in any way, useState is the way to go. so hence "listofRestaurants" is using useState() not normal js variable. i.e. updating UI wrt to change in data
+
+if Dependency array is [btnNameReact] => called everytime when btnNameReact is updated.
+
+Never called hooks outside of the functional components.
+
+useState is used to create localState variables inside your functional components.
+
+React Router:
+
+
+import { createBrowserRouter } from "react-router-dom"; -> it will create a routing configuration for us.
+
+configuration: Means Some information that will define what will happen on a specific route. An information that will tell the browser router that what will happen on a specific path. 
+
+Router Provider component will provide routing configuration to the app.
+
+import { useRouteError } from "react-router-dom"; => We can get more information about the customize error
+
+{btnNameReact} is used to ensure the button's label updates dynamically based on the state. In the Header component.
+
+Childern Routes:
+
+The outlet will be filled with childern according to the path on what page we are. For eg. if whenever i will be on "/" my body page will be filled on this outlet. if i'm on /about my about will be filled inside this outlet.
+
+The outlet gets replaced by components like about, contact component/page.
+The outlet does not even get visible on browsers html as it gets replaced by the component.
+
+outlet is a component
+
+A superpower given to us by react router dom, link component -> which is used to link different pages on our website -> without refreshing the page and routes/links to particular page, it just reloads/refreshes the component not whole page.
+
+Never ever used an anchor tag to link pages in react, as it refreshes the whole page which makes our website slower.
+
+
+React is single page application means if we want to route to another page for e.g. about us page or contact us page, our whole website page does not gets refresh just the component i.e. about us, contact us component gets refresh. So in this case header and other elements remains intact/fix, just the components reload not the whole page.
+
+Behide the scenes Link component provided by react router dom uses the anchor tag. Link is not provided by html or js, so browser does not understands Link at all, so on browser anchor tag is been displayed in elements section code. 
+
+Link is an wrapper over anchor tag. 
+
+Behide the scenes react router dom is making Link as anchor tag and also keeping the track of it.
+
+If we put any value/variable inside Dependency array of UseEffect, so whenever that variable value changes/data changes, useeffect will get called respectively.
+
+Do not make nested hooks, it will not work
+
+
+In React, a prop (short for "property") is a way to pass data from a parent component to a child component. Props help to make components reusable and dynamic.
+
+Eg of props -> 
+
+import React from 'react';
+
+// Parent Component
+function App() {
+  const userName = "John Doe";
+  const userAge = 25;
+
+  return (
+    <div>
+      <h1>User Information</h1>
+      <UserProfile name={userName} age={userAge} />
+    </div>
+  );
+}
+
+// Child Component
+function UserProfile(props) {
+  return (
+    <div>
+      <h2>Name: {props.name}</h2>
+      <p>Age: {props.age}</p>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
